@@ -49,18 +49,13 @@ def parse_direct_mention(message_text):
     return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
 
 def handle_command(command, channel):
-    """
-        Executes bot command if the command is known
-    """
 
     # if the command is "namaz", return the next prayer    
     if command.startswith("namaz"):
 
         # get the prayer times from islamicreliefcanada
         df = pd.read_html('http://islamicreliefcanada.org/prayer-times/est/')[0]
-
-
-
+      
         # determine which one is next
         
         now = dt.now()
@@ -81,7 +76,6 @@ def handle_command(command, channel):
             text='{}: {}'.format(k, v)
         )
 
-    # just reply 'lol haha'
     elif command.startswith("sup"):
 
         slack_client.api_call(
