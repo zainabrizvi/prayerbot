@@ -81,7 +81,7 @@ def handle_command(command, channel):
         slack_client.api_call(
             "chat.postMessage",
             channel=channel,
-            text='lol haha ye'
+            text='lol haha hi'
         )        
     else:
         slack_client.api_call(
