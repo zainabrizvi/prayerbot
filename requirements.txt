@@ -1,0 +1,5 @@
+pandas
+slackclient
+bs4
+htmllib5
+lxml
